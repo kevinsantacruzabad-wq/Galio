@@ -3,107 +3,114 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GALIO SYSTEM</title>
+<title>GALIO</title>
 
 <style>
 body{
     margin:0;
     font-family: Arial, sans-serif;
-    background: radial-gradient(circle at top, #0a0f2c, #05060a);
-    color:white;
-    overflow-x:hidden;
-}
-
-/* SIDEBAR */
-.sidebar{
-    position:fixed;
-    top:0;
-    left:0;
-    width:220px;
-    height:100%;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(12px);
-    padding:20px;
-    border-right:1px solid rgba(255,255,255,0.1);
-}
-
-.logo{
-    font-size:22px;
-    font-weight:bold;
-    color:#8ea2ff;
-    margin-bottom:30px;
-    letter-spacing:2px;
-}
-
-.nav button{
-    display:block;
-    width:100%;
-    margin:10px 0;
-    padding:10px;
-    border:none;
-    background:transparent;
-    color:#bbb;
-    text-align:left;
-    cursor:pointer;
-    transition:0.3s;
-    border-radius:8px;
-}
-
-.nav button:hover{
-    background: rgba(142,162,255,0.2);
+    background:#070A12;
     color:white;
 }
 
-/* MAIN */
-.main{
-    margin-left:240px;
-    padding:30px;
+/* NAV */
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 40px;
+    background:rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px);
 }
 
-.title{
-    font-size:40px;
-    color:#c7d2ff;
-    text-shadow:0 0 15px #6a7dff;
+nav h1{
+    font-size:18px;
+    letter-spacing:3px;
+    color:#9aa7ff;
 }
 
-.subtitle{
+nav a{
     color:#aaa;
-    margin-bottom:30px;
+    margin-left:20px;
+    text-decoration:none;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:white;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:100px 20px 60px;
+}
+
+.hero h2{
+    font-size:55px;
+    margin:0;
+    background: linear-gradient(90deg,#7a8cff,#c084fc);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero p{
+    color:#aaa;
+    margin-top:15px;
+    font-size:16px;
+}
+
+/* BUTTON */
+.btn{
+    margin-top:25px;
+    display:inline-block;
+    padding:12px 28px;
+    border-radius:12px;
+    background: linear-gradient(90deg,#5b6cff,#a855f7);
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.05);
 }
 
 /* CARDS */
+.container{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    padding:40px;
+}
+
 .card{
-    background: rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.1);
+    width:260px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08);
     padding:20px;
     border-radius:15px;
-    margin-bottom:20px;
-    backdrop-filter: blur(10px);
-    box-shadow:0 0 20px rgba(100,120,255,0.1);
+    transition:0.3s;
 }
 
-/* SECTIONS */
-.section{
-    display:none;
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#7a8cff;
 }
 
-.active{
-    display:block;
+.card h3{
+    color:#c7d2ff;
 }
 
-/* GLOW EFFECT */
-.glow{
-    animation: glow 2s infinite alternate;
+.card p{
+    color:#aaa;
+    font-size:14px;
 }
 
-@keyframes glow{
-    from{ text-shadow:0 0 10px #6a7dff; }
-    to{ text-shadow:0 0 25px #9aa7ff; }
-}
-
+/* FOOTER */
 footer{
     text-align:center;
-    margin-top:40px;
+    padding:30px;
     color:#666;
     font-size:12px;
 }
@@ -112,65 +119,43 @@ footer{
 
 <body>
 
-<div class="sidebar">
-    <div class="logo">GALIO</div>
-    <div class="nav">
-        <button onclick="show('info')">Información</button>
-        <button onclick="show('prop')">Propiedades</button>
-        <button onclick="show('uso')">Usos</button>
+<nav>
+    <h1>GALIO</h1>
+    <div>
+        <a href="#">Inicio</a>
+        <a href="#">Info</a>
+        <a href="#">Usos</a>
     </div>
-</div>
+</nav>
 
-<div class="main">
+<section class="hero">
+    <h2>GALIO</h2>
+    <p>Elemento metálico con propiedades únicas usado en tecnología moderna</p>
+    <a class="btn" href="#">Explorar</a>
+</section>
 
-    <div class="section active" id="info">
-        <div class="title glow">GALIO SYSTEM</div>
-        <div class="subtitle">Elemento metálico de tecnología avanzada y alta resistencia</div>
+<section class="container">
 
-        <div class="card">
-            <h3>Descripción</h3>
-            <p>El galio es un metal blando, de color plateado, utilizado en electrónica avanzada y semiconductores.</p>
-        </div>
-
-        <div class="card">
-            <h3>Estado</h3>
-            <p>Sólido a temperatura ambiente, pero se derrite cerca de la temperatura corporal.</p>
-        </div>
+    <div class="card">
+        <h3>¿Qué es?</h3>
+        <p>Metal blando de color plateado que se derrite cerca de la temperatura corporal.</p>
     </div>
 
-    <div class="section" id="prop">
-        <div class="title glow">PROPIEDADES</div>
-
-        <div class="card">
-            <p>⚡ Punto de fusión bajo</p>
-            <p>⚡ Alta conductividad en aleaciones</p>
-            <p>⚡ Resistente a la corrosión</p>
-            <p>⚡ Metal post-transición</p>
-        </div>
+    <div class="card">
+        <h3>Propiedades</h3>
+        <p>Bajo punto de fusión, alta estabilidad y uso en semiconductores.</p>
     </div>
 
-    <div class="section" id="uso">
-        <div class="title glow">APLICACIONES</div>
-
-        <div class="card">
-            <p>📱 Semiconductores</p>
-            <p>💡 LEDs y pantallas</p>
-            <p>🛰️ Tecnología aeroespacial</p>
-            <p>🔬 Investigación científica</p>
-        </div>
+    <div class="card">
+        <h3>Aplicaciones</h3>
+        <p>Electrónica, LEDs, chips y tecnología avanzada.</p>
     </div>
 
-    <footer>GALIO SYSTEM © 2026 | Futuristic UI</footer>
+</section>
 
-</div>
-
-<script>
-function show(id){
-    let sections = document.querySelectorAll('.section');
-    sections.forEach(s => s.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-}
-</script>
+<footer>
+    GALIO PROJECT © 2026
+</footer>
 
 </body>
-</html>
+</html> 
