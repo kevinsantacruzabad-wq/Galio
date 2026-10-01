@@ -3,164 +3,174 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Galio (Ga)</title>
+<title>GALIO SYSTEM</title>
 
 <style>
 body{
-  margin:0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  color:white;
-  text-align:center;
+    margin:0;
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle at top, #0a0f2c, #05060a);
+    color:white;
+    overflow-x:hidden;
 }
 
-/* HEADER */
-header{
-  padding:30px;
+/* SIDEBAR */
+.sidebar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:220px;
+    height:100%;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    padding:20px;
+    border-right:1px solid rgba(255,255,255,0.1);
 }
 
-header img{
-  width:110px;
-  border-radius:15px;
-  margin-bottom:10px;
-  box-shadow:0 0 15px rgba(0,0,0,0.6);
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#8ea2ff;
+    margin-bottom:30px;
+    letter-spacing:2px;
 }
 
-h1{
-  color:#00e5ff;
-  font-size:45px;
+.nav button{
+    display:block;
+    width:100%;
+    margin:10px 0;
+    padding:10px;
+    border:none;
+    background:transparent;
+    color:#bbb;
+    text-align:left;
+    cursor:pointer;
+    transition:0.3s;
+    border-radius:8px;
 }
 
-h2{
-  color:#00e5ff;
+.nav button:hover{
+    background: rgba(142,162,255,0.2);
+    color:white;
 }
 
-/* SECCIONES */
-section{
-  padding:40px 20px;
-  border-bottom:1px solid rgba(255,255,255,0.1);
+/* MAIN */
+.main{
+    margin-left:240px;
+    padding:30px;
 }
 
-/* TEXTO */
-p{
-  max-width:800px;
-  margin:auto;
-  line-height:1.6;
+.title{
+    font-size:40px;
+    color:#c7d2ff;
+    text-shadow:0 0 15px #6a7dff;
 }
 
-/* IMAGEN */
-img.main{
-  width:300px;
-  border-radius:10px;
-  margin-top:15px;
+.subtitle{
+    color:#aaa;
+    margin-bottom:30px;
 }
 
-/* LISTAS */
-ul{
-  list-style:none;
-  padding:0;
+/* CARDS */
+.card{
+    background: rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    padding:20px;
+    border-radius:15px;
+    margin-bottom:20px;
+    backdrop-filter: blur(10px);
+    box-shadow:0 0 20px rgba(100,120,255,0.1);
 }
 
-li{
-  margin:6px 0;
+/* SECTIONS */
+.section{
+    display:none;
 }
 
-/* BOTONES */
-.btn{
-  display:inline-block;
-  margin-top:15px;
-  padding:10px 20px;
-  background:#00e5ff;
-  color:black;
-  border-radius:25px;
-  text-decoration:none;
-  font-weight:bold;
-  transition:0.3s;
+.active{
+    display:block;
 }
 
-.btn:hover{
-  background:#00bcd4;
-  transform:scale(1.05);
+/* GLOW EFFECT */
+.glow{
+    animation: glow 2s infinite alternate;
 }
 
-/* FOOTER */
+@keyframes glow{
+    from{ text-shadow:0 0 10px #6a7dff; }
+    to{ text-shadow:0 0 25px #9aa7ff; }
+}
+
 footer{
-  padding:20px;
-  background:#00000040;
-  margin-top:20px;
+    text-align:center;
+    margin-top:40px;
+    color:#666;
+    font-size:12px;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-  <!-- INSIGNIA INCLUIDA DIRECTAMENTE -->
-  <img src="1000163241.jpg">
-  <h1>🧪 Galio (Ga)</h1>
-  <p>I. E. Nicolás La Torre</p>
-</header>
+<div class="sidebar">
+    <div class="logo">GALIO</div>
+    <div class="nav">
+        <button onclick="show('info')">Información</button>
+        <button onclick="show('prop')">Propiedades</button>
+        <button onclick="show('uso')">Usos</button>
+    </div>
+</div>
 
-<section>
-  <h2>¿Qué es el galio?</h2>
-  <p>
-    El galio es un metal blando de color plateado con número atómico 31.
-    Puede derretirse fácilmente en la mano debido a su bajo punto de fusión.
-  </p>
-  <img class="main" src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Gallium_crystals.jpg">
-</section>
+<div class="main">
 
-<section>
-  <h2>Información básica</h2>
-  <ul>
-    <li>Nombre: Galio</li>
-    <li>Símbolo: Ga</li>
-    <li>Número atómico: 31</li>
-    <li>Masa atómica: 69.72 u</li>
-  </ul>
-  <a href="#" class="btn">Ver más</a>
-</section>
+    <div class="section active" id="info">
+        <div class="title glow">GALIO SYSTEM</div>
+        <div class="subtitle">Elemento metálico de tecnología avanzada y alta resistencia</div>
 
-<section>
-  <h2>Propiedades</h2>
-  <ul>
-    <li>Punto de fusión: 29.7 °C</li>
-    <li>Punto de ebullición: más de 2200 °C</li>
-    <li>Densidad: 5.9 g/cm³</li>
-  </ul>
-</section>
+        <div class="card">
+            <h3>Descripción</h3>
+            <p>El galio es un metal blando, de color plateado, utilizado en electrónica avanzada y semiconductores.</p>
+        </div>
 
-<section>
-  <h2>Usos</h2>
-  <ul>
-    <li>Semiconductores</li>
-    <li>Luces LED</li>
-    <li>Paneles solares</li>
-  </ul>
-</section>
+        <div class="card">
+            <h3>Estado</h3>
+            <p>Sólido a temperatura ambiente, pero se derrite cerca de la temperatura corporal.</p>
+        </div>
+    </div>
 
-<section>
-  <h2>Riesgos</h2>
-  <ul>
-    <li>No ingerir</li>
-    <li>Puede irritar la piel</li>
-    <li>Usar con cuidado</li>
-  </ul>
-</section>
+    <div class="section" id="prop">
+        <div class="title glow">PROPIEDADES</div>
 
-<section>
-  <h2>Curiosidades</h2>
-  <ul>
-    <li>Se derrite en tu mano 😲</li>
-    <li>Muy usado en tecnología</li>
-  </ul>
-</section>
+        <div class="card">
+            <p>⚡ Punto de fusión bajo</p>
+            <p>⚡ Alta conductividad en aleaciones</p>
+            <p>⚡ Resistente a la corrosión</p>
+            <p>⚡ Metal post-transición</p>
+        </div>
+    </div>
 
-<footer>
-  <p><strong>Estudiante:</strong> Jordan Fabricio Carbonel Peña</p>
-  <p><strong>Sección:</strong> 3° "I"</p>
-  <p><strong>Colegio:</strong> I. E. Nicolás La Torre</p>
-</footer>
+    <div class="section" id="uso">
+        <div class="title glow">APLICACIONES</div>
+
+        <div class="card">
+            <p>📱 Semiconductores</p>
+            <p>💡 LEDs y pantallas</p>
+            <p>🛰️ Tecnología aeroespacial</p>
+            <p>🔬 Investigación científica</p>
+        </div>
+    </div>
+
+    <footer>GALIO SYSTEM © 2026 | Futuristic UI</footer>
+
+</div>
+
+<script>
+function show(id){
+    let sections = document.querySelectorAll('.section');
+    sections.forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+}
+</script>
 
 </body>
 </html>
